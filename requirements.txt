@@ -1,0 +1,12 @@
+# Pipeline: ingest, plan, render, review page, playbook page.
+# Versions in use when this was written: Python 3.12, numpy 2.5, Pillow 13.0, librosa 1.0, requests 2.34,
+# torch 2.15 (CPU build is enough), Markdown 3.11. ffmpeg 8 must be on PATH.
+numpy
+opencv-python-headless
+Pillow
+librosa
+soundfile
+requests
+torch
+panns-inference
+markdown

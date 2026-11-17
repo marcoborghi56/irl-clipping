@@ -1,0 +1,1066 @@
+{
+ "round": "2026-11-15-first-run",
+ "recorded": "2026-11-16",
+ "clips_dir": "D:\\YouTube + Media\\Daily Vlogging\\2026\\clilpping\\clips",
+ "moments": [
+  {
+   "id": "c01",
+   "key": "C9547@188",
+   "source": "C9547.MP4",
+   "type": "embarrassment",
+   "score": 70,
+   "length_s": 37.1,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "A",
+   "summary": "S1 pitches a friend who charges $5 a deal where S1 charges $1,000 and keeps 90%, the friend admits it sounded good to him, another friend says it's horrible, and the friend laughs it off.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c01_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "I pitched my friend a 90/10 split",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c01_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"He charges five bucks, I'll charge a thousand\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c01_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Would you take this deal from your friend?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c01_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"He charges five bucks, I'll charge a thousand\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c02",
+   "key": "C9555@857",
+   "source": "C9555.MP4",
+   "type": "embarrassment",
+   "score": 70,
+   "length_s": 24.7,
+   "risks": [
+    "profanity",
+    "copyrighted_music"
+   ],
+   "qa_tier": "A",
+   "summary": "S1 asks a friend to sing on the spot, the friend sings a line in Spanish, S1 calls it valid and then flips it: he was just click farming, it was not valid.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c02_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "I asked my friend to sing on the spot",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c02_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Can we see a clip of you singing?\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c02_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "I put my friend on the spot about his singing",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c02_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Can we see a clip of you singing?\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c04",
+   "key": "C9555@1213",
+   "source": "C9555.MP4",
+   "type": "embarrassment",
+   "score": 67,
+   "length_s": 16.7,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "B",
+   "summary": "A friend from the Bronx can't name anything else in New York, offers Philly, then decides it's in New Jersey; S1 agrees and says he can tell geography isn't his thing.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c04_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "My friend tried to name a place in New York",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c04_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"I can't think of anything else in New York\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c04_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Is Philly in New York?..",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c04_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"I can't think of anything else in New York\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c05",
+   "key": "C9554@63",
+   "source": "C9554.MP4",
+   "type": "embarrassment",
+   "score": 66,
+   "length_s": 27.6,
+   "risks": [
+    "profanity",
+    "visual_only"
+   ],
+   "qa_tier": "B",
+   "summary": "S1 jokingly catches a friend eating the house cheese puffs and blames him for the vanishing stash, but the friend says he only arrived yesterday, then turns it back on S1.",
+   "verdict": "picked",
+   "note": "",
+   "versions": [
+    {
+     "id": "c05_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "I accused my friend of eating all our snacks",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c05_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"So this is where the cheese puffs are going\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": true
+    },
+    {
+     "id": "c05_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "I caught my friend with the cheese puffs",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c05_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"So this is where the cheese puffs are going\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c06",
+   "key": "C9555@1106",
+   "source": "C9555.MP4",
+   "type": "embarrassment",
+   "score": 63,
+   "length_s": 25.8,
+   "risks": [],
+   "qa_tier": "A",
+   "summary": "Talking about the upcoming house party, a friend says he is an angel when cameras are on but will be swinging on the chandelier once they cut, and S1 says the hired security is to protect everyone else from him.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c06_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "He's only an angel while the cameras are on",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c06_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"I'm an angel when the camera's on\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c06_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Why did we hire security for one guy?..",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c06_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"I'm an angel when the camera's on\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c07",
+   "key": "C9543@201",
+   "source": "C9543.MP4",
+   "type": "confrontation",
+   "score": 62,
+   "length_s": 25.5,
+   "risks": [
+    "profanity",
+    "sensitive_on_screen"
+   ],
+   "qa_tier": "B",
+   "summary": "S1 reads ChatGPT's warning about the pre-workout aloud, declares a 'first strike' against his friend, and the two argue over how many 'rhino pills' it equals.",
+   "verdict": "picked",
+   "note": "",
+   "versions": [
+    {
+     "id": "c07_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "I asked ChatGPT about my friend's pre-workout",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": true
+    },
+    {
+     "id": "c07_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"This is the first strike, bro\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c07_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Is this pre-workout actually safe?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c07_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"This is the first strike, bro\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c08",
+   "key": "C9548@31",
+   "source": "C9548.MP4",
+   "type": "confrontation",
+   "score": 62,
+   "length_s": 29.0,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "B",
+   "summary": "S1 sits down next to a friend with the camera rolling and says nothing, the friend calls him out for expecting him to make the content, and S1 flips it into 'he's generating content for me'.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c08_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "He sat down and expected me to make the content",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c08_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"He thinks we're like puppets or something\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c08_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Who's really making the content here?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c08_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"He thinks we're like puppets or something\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c09",
+   "key": "C9547@149",
+   "source": "C9547.MP4",
+   "type": "reveal_stakes",
+   "score": 61,
+   "length_s": 18.9,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "A",
+   "summary": "A friend asks S1 how much he'd charge to promote him, S1 says '10 bands' for 15 seconds and everyone reacts.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c09_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "My friend asked my price for a promo",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c09_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"How much would you charge me for a promo?\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c09_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "What would you charge a friend for a shoutout?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c09_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"How much would you charge me for a promo?\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c10",
+   "key": "C9550@59",
+   "source": "C9550.MP4",
+   "type": "embarrassment",
+   "score": 60,
+   "length_s": 30.2,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "B",
+   "summary": "A friend explains that weed makes him overthink and wonder if he's annoying everyone, and S1's flat reply 'Oh, that's sad' makes the room laugh at him.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c10_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "My friend opened up and I said the wrong thing",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c10_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Yo, am I being annoying to everyone right now?\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c10_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "He opened up and all he got was \"that's sad\"",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c10_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Yo, am I being annoying to everyone right now?\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c12",
+   "key": "C9555@899",
+   "source": "C9555.MP4",
+   "type": "reveal_stakes",
+   "score": 60,
+   "length_s": 22.9,
+   "risks": [
+    "profanity",
+    "visual_only"
+   ],
+   "qa_tier": "B",
+   "summary": "S1 and a friend inspect a skull-shaped party cup, spot little black mold pieces inside, and the friend says it is somebody's actual skull.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c12_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "We found mold in the party skull cup",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c12_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "This party skull cup has mold in it",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c12_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Would you drink out of this?..",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c12_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "This party skull cup has mold in it",
+     "title_style": "what happened",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c13",
+   "key": "C9545@13",
+   "source": "C9545.MP4",
+   "type": "embarrassment",
+   "score": 57,
+   "length_s": 26.5,
+   "risks": [
+    "needs_context"
+   ],
+   "qa_tier": "C",
+   "summary": "At the gym his friend compliments his pump and vascularity, S1 asks how his pupils look, then admits why he might look so vascular.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c13_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "Gym check: how do my pupils look?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c13_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"What are my pupils looking like?\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c13_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Is this pre-workout working too well?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c13_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"What are my pupils looking like?\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c14",
+   "key": "C9555@97",
+   "source": "C9555.MP4",
+   "type": "reveal_stakes",
+   "score": 57,
+   "length_s": 26.7,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "A",
+   "summary": "S1 hunts for the house alcohol before a party, finds only five bottles left, and a friend admits they finished the rest on a bender two weekends ago.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c14_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "Our whole alcohol stash vanished before the party",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c14_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Where did all the alcohol go?\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c14_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "Who finished the drinks before the party?..",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c14_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Where did all the alcohol go?\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c15",
+   "key": "C9550@126",
+   "source": "C9550.MP4",
+   "type": "wholesome_emotional",
+   "score": 56,
+   "length_s": 37.4,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "C",
+   "summary": "A friend tells how he called his therapist during a period of panic attacks and was told to close his eyes and tell the anxiety 'show me what you got', which made it fade.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c15_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "His therapist's trick for panic attacks",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c15_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "What his therapist told him to do mid panic attack",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c15_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "What his therapist told him to do mid panic attack",
+     "title_style": "what happened",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c16",
+   "key": "Octobe October 28 log footage 2026 number two@32",
+   "source": "Octobe October 28 log footage 2026 number two.mov",
+   "type": "mood",
+   "score": 56,
+   "length_s": 18.4,
+   "risks": [
+    "speech_unclear",
+    "needs_context"
+   ],
+   "qa_tier": "C",
+   "summary": "Exhausted at the end of the day, S1 screams and a talking Halloween animatronic answers with sassy lines until he gives up and says good night.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c16_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "A Halloween animatronic talked back to me",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c16_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "This Halloween animatronic had an attitude..",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c16_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "This Halloween animatronic had an attitude..",
+     "title_style": "question or teaser",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c17",
+   "key": "C9543@245",
+   "source": "C9543.MP4",
+   "type": "embarrassment",
+   "score": 55,
+   "length_s": 30.5,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "A",
+   "summary": "S1 finds an estimate of 410 mg of caffeine, panics that he's uninsured and can't afford a health bill, and hands the rest back while his friend insists that's not how it works.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c17_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "I panicked after drinking his pre-workout",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c17_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"And I'm uninsured right now too\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c17_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "How much caffeine is too much?",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c17_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"And I'm uninsured right now too\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c18",
+   "key": "C9547@356",
+   "source": "C9547.MP4",
+   "type": "reveal_stakes",
+   "score": 55,
+   "length_s": 12.9,
+   "risks": [
+    "profanity",
+    "needs_context"
+   ],
+   "qa_tier": "C",
+   "summary": "A friend asks to be added to S1's AI world as a little model, S1 quotes him 'five bands' on the spot and the friend laughs in disbelief.",
+   "verdict": "unreviewed",
+   "note": "",
+   "versions": [
+    {
+     "id": "c18_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "My friend asked to be in my AI world",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c18_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"How can you add me into it?\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c18_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"How can you add me into it?\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c19",
+   "key": "C9555@1598",
+   "source": "C9555.MP4",
+   "type": "embarrassment",
+   "score": 55,
+   "length_s": 19.3,
+   "risks": [
+    "profanity",
+    "needs_context"
+   ],
+   "qa_tier": "A",
+   "summary": "S1 gives camera advice about pushing back when you're the expert, a friend walks by and says just do what the big boss tells you, and S1 kicks him out of the shot.",
+   "verdict": "picked",
+   "note": "",
+   "versions": [
+    {
+     "id": "c19_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "My friend ruined my serious advice",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c19_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Just do what the big boss tells you\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": true
+    },
+    {
+     "id": "c19_c",
+     "canvas": "square",
+     "subtitles": true,
+     "title": "He undercut my whole speech..",
+     "title_style": "question or teaser",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c19_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"Just do what the big boss tells you\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  },
+  {
+   "id": "c20",
+   "key": "C9708@420",
+   "source": "C9708.MP4",
+   "type": "prank_physical",
+   "score": 55,
+   "length_s": 14.6,
+   "risks": [
+    "profanity"
+   ],
+   "qa_tier": "C",
+   "summary": "The cameraman, bored of waiting on the loading tutorial, says the camera battery is about to die, the creator panics, and he admits he is kidding.",
+   "verdict": "picked",
+   "note": "",
+   "versions": [
+    {
+     "id": "c20_a",
+     "canvas": "square",
+     "subtitles": false,
+     "title": "My cameraman pranked me mid-tutorial",
+     "title_style": "what happened",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": false
+    },
+    {
+     "id": "c20_b",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"The battery's gonna die\"",
+     "title_style": "quote",
+     "speed": 1.0,
+     "pitch": null,
+     "offered": true,
+     "picked": true
+    },
+    {
+     "id": "c20_d",
+     "canvas": "vertical",
+     "subtitles": false,
+     "title": "\"The battery's gonna die\"",
+     "title_style": "quote",
+     "speed": 1.5,
+     "pitch": "keep",
+     "offered": false,
+     "picked": false
+    }
+   ]
+  }
+ ]
+}

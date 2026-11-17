@@ -1,0 +1,115 @@
+{
+  "_about": "Edit defaults for plan.py and render.py, derived from research/PLAYBOOK.md (88 reels, IRL-format reels weighted). Values marked 'default, not evidence' are judgement calls.",
+
+  "length": {
+    "_notes": "IRL outliers: median 24 s, quartiles 17-40 s, 10th-90th percentile 10-57 s. IRL flops: median 22 s, so length does not predict success. Clips over 35 s only if beats keep escalating (every long outlier did). The 60 s cap is a default, not evidence: the longest outliers (96 s, 272 s) are exceptions held up by constant escalation.",
+    "target_s": 24,
+    "preferred_range_s": [15, 35],
+    "hard_min_s": 7,
+    "hard_max_s": 60
+  },
+
+  "structure": {
+    "_notes": "Single-beat outliers put the turn at roughly 30-90% of runtime, most often in the middle to last third. Flops put it at 20% followed by talk, or past 75% of a 66-74 s clip. All outliers end with a hard cut shortly after the reaction; none has an outro.",
+    "payoff_position_frac": [0.5, 0.85],
+    "payoff_position_ideal": 0.7,
+    "tail_after_payoff_s": [1.0, 3.0],
+    "max_lead_in_before_action_s": 3.0,
+    "outro": false,
+    "fade_out": false
+  },
+
+  "pause_tightening": {
+    "_notes": "IRL outliers: 3.8 cuts per 10 s, median shot about 1 s (Marlon 5.1 per 10 s); flops 3.0 per 10 s. Outliers talk less (speech 45% of runtime against 63%), and their silences often hold the action. Tighten dead air, never the action: no tightening from 2 s before payoff_at to the end, and none in gaps tagged LOUD, LAUGH, SHOUT or CROWD, or in candidates flagged visual_only. The exact N and M are a default, not evidence.",
+    "remove_silence_longer_than_s": 1.2,
+    "keep_silence_s": 0.4,
+    "min_segment_s": 0.8,
+    "max_jump_cuts_per_10s": 5,
+    "protect_window_before_payoff_s": 2.0,
+    "protect_if_tags": ["LOUD", "LAUGH", "SHOUT", "CROWD"],
+    "skip_if_risk": ["visual_only", "camera_off_action"]
+  },
+
+  "zoom": {
+    "_notes": "Zoom events: IRL outliers 2.7 per 10 s, flops 3.4 per 10 s (the detector also counts camera shake), so punch-ins do not help. Use them only to hide jump cuts: alternate 1.0 and 1.08 across segments that were joined by pause-tightening. Crop layout only; with fit layout the frame is already small.",
+    "punch_in": "jump_cuts_only",
+    "factors_alternate": [1.0, 1.08],
+    "layouts": ["crop"],
+    "decorative_zooms": false
+  },
+
+  "title": {
+    "_notes": "Text is on screen from 0.0 s for about 100% of runtime in nearly all reels, outliers and flops alike: a title is baseline, and its wording is what differs. Typical style: one static premise caption in the lower third, bold white rounded sans with a dark outline (Marlon), often ending in one emoji. Measured text height is about 5% of a square frame, about 3-4% of a vertical one (roughly 55-75 px); median vertical position about 0.64, mostly 0.50-0.85. Instagram's own UI covers the bottom ~20% of a 9:16 frame, so the title stays at or above 0.74. In fit layout a 16:9 picture fills about y 0.34-0.66, and y 0.72 puts the title in the blurred band just below the picture, which is closest to the square-reel look. Double quotes mean the line is spoken in the clip; a trailing '..' marks a teaser. Emoji choice is a default, not evidence.",
+    "enabled": true,
+    "y_crop_layout": 0.7,
+    "y_fit_layout": 0.72,
+    "max_y": 0.74,
+    "text_height_frac": 0.033,
+    "max_width_frac": 0.8,
+    "max_chars": 50,
+    "max_lines": 2,
+    "hard_max_lines": 3,
+    "font": "bold sans, white fill, black stroke about 12% of text height",
+    "emoji": "at most one, at the end; 😭 funny or awkward, 🥺 wholesome, 💔 loss or fail; none if the title already lands",
+    "quote_convention": "double quotes only when the words are spoken in the clip",
+    "teaser_suffix": "..",
+    "start_s": 0,
+    "end": null,
+    "static": true
+  },
+
+  "subtitles": {
+    "_notes": "IRL outliers change on-screen text 2.6 times per 10 s against 8.2 for flops. Most outliers use a static title only; word-by-word subtitles appear in a few outliers (Marlon on the key line, TJR's burger clip) and in several flops. Default off. One variation per moment may turn them on when the payoff is a spoken line likely to be missed with the sound off or under noise (risk speech_unclear, or stranger/confrontation clips with speech above 50% of runtime). This is an untested choice that the variations should settle.",
+    "default": false,
+    "enable_in_variation_if": ["speech_unclear", "payoff_is_spoken_line"],
+    "words_per_line": [2, 4],
+    "y": 0.6,
+    "avoid_overlap_with_title": true
+  },
+
+  "layout": {
+    "_notes": "Among IRL outliers, 18 are square 1080x1080, 12 vertical, 3 other. Lacy's and TJR's raw street clips are full vertical phone footage. Output canvas is 1080x1920. Vertical source: crop to fill. Horizontal source: 'fit' (whole frame on a blurred background) by default, because the selection model cannot see where the action is and a 9:16 crop throws away about 68% of the width. Switch to 'crop' only when the QA contact sheet shows one subject who stays near the centre, setting crop_x from the sheet. The square look of Marlon and Stable Ronaldo is not reproducible with a fixed 9:16 canvas; fit with the title below the picture is the nearest equivalent. Square vs vertical is unsettled by the evidence: if time allows, render one fit and one crop variation of the top horizontal moments.",
+    "vertical_source": {"layout": "crop", "crop_x": 0.5},
+    "horizontal_source": {"layout": "fit", "alt_variation": "crop after QA check of crop_x"},
+    "square_source": {"layout": "fit"}
+  },
+
+  "fonts": {
+    "_notes": "Typeface for titles and subtitles. Set to TikTok Sans on 2026-11-16 at the creator's direct request, to match the reels they take as inspiration; before that it was Segoe UI Bold. Titles use the SemiBold cut (see title_look), subtitles the Bold cut. The study measured caption size and position but never identified typefaces, so this rests on the creator's eye, not on the measurements. Paths are relative to the skill folder; plan.py stops with an error if a file is missing, so clips are never rendered in another typeface by accident. TikTok Sans is open source (SIL Open Font License; the licence text sits beside the font files). The 28pt cut is the one drawn for large display text.",
+    "title": "assets/fonts/TikTokSans/TikTokSans_28pt-SemiBold.ttf",
+    "subtitles": "assets/fonts/TikTokSans/TikTokSans_28pt-Bold.ttf"
+  },
+
+  "title_look": {
+    "_notes": "How the title is drawn, matched by eye on 2026-11-16 against caption frames from 12 studied outlier reels (for example Marlon's door-handle reel and Stable Ronaldo's raid reel) after the creator asked for the titles to match them: a white sans of about semibold weight with a thin dark outline and a soft shadow, about 62 to 78 px tall on a 1080-wide frame. Drawn on top of two reference frames, the SemiBold cut at 68 px sat closest (stem thickness about 0.115 of the text size in the references; Medium read slightly light, and the first attempt, Bold with a 6 px outline at 58 px, read heavy and small). Sizes are for a 1080-wide frame.",
+    "size_square": 68,
+    "size_vertical": 68,
+    "outline_px": 3,
+    "shadow": {"blur": 5, "dy": 2, "strength": 1.8}
+  },
+
+  "speed": {
+    "_notes": "Added 2026-11-16 at the creator's request: a sped-up copy of the vertical version for comedic effect, to be judged through picks. Evidence is thin: an audio check found 2 of the 25 outliers it could judge sped up (about 1.4x and 1.85x, both Marlon, both with the pitch rising with the speed) and could not judge most of Lacy's reels. 'pitch: up' resamples the audio so the voice rises with the speed, as in those two reels; 'keep' time-stretches and holds the pitch. The 1.7 factor is the creator's choice, not a measured optimum. Speed versions are extra: they do not count against the clip total.",
+    "enabled": true,
+    "factor": 1.5,
+    "pitch": "keep",
+    "base_version": "b"
+  },
+
+  "audio": {
+    "_notes": "Integrated loudness is about -14 LUFS in all groups. Keep the original audio; it carries the reactions (the sauna screams and the gas-pump clip have no music at all).",
+    "loudnorm": -14,
+    "true_peak_db": -1.0,
+    "join_fade_ms": 10
+  },
+
+  "music": {
+    "_notes": "The classifier hears music in about 70% of outlier runtime and 55% of IRL flop runtime. Cuts are not on the beat (on-beat share at chance level). Music is common to both groups, so it is not shown to cause the lift. The pipeline cannot add licensed music. At posting time: for visual-only or mood clips (little speech), add a trending Instagram sound at normal volume. For speech-led clips, either post with original audio only or add a trending sound at about 10-20% volume under the original, so the dialogue stays clear. Do not mute the original audio on any clip whose payoff is spoken.",
+    "pipeline_adds_music": false,
+    "at_posting": {
+      "low_speech_or_mood": "add a trending sound in the Instagram app, normal volume",
+      "speech_led": "original audio only, or a trending sound at about 10-20% volume underneath",
+      "never": "replace original audio when the payoff is a spoken line or reaction"
+    }
+  }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__TITLE__</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* layout: one column of moment cards. Each card reads top to bottom: facts, what happens,
+     then its versions side by side at one shared height, then the verdict row. */
+  --bg:#eef0f4; --surface:#ffffff; --ink:#151821; --muted:#5a6172; --line:#d5d9e2;
+  --accent:#2545c9; --on-accent:#ffffff;
+  --good:#117a45; --on-good:#ffffff; --good-soft:#e0f3e8;
+  --warn:#8a5200; --warn-soft:#f8ecd0;
+  --stage:#0b0d12;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+  --h:clamp(190px,27vw,320px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1015; --surface:#171a22; --ink:#eceef4; --muted:#9ba2b4; --line:#2b303d;
+    --accent:#8ea2ff; --on-accent:#0c1020;
+    --good:#49c586; --on-good:#06180e; --good-soft:#12301f;
+    --warn:#e3b253; --warn-soft:#33270b;
+    --stage:#000000;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1015; --surface:#171a22; --ink:#eceef4; --muted:#9ba2b4; --line:#2b303d;
+  --accent:#8ea2ff; --on-accent:#0c1020;
+  --good:#49c586; --on-good:#06180e; --good-soft:#12301f;
+  --warn:#e3b253; --warn-soft:#33270b;
+  --stage:#000000;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.5 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.top{padding:28px 0 18px}
+.count{margin:0 0 6px;font:500 13px/1.3 var(--mono);color:var(--muted)}
+h1{margin:0;font:800 34px/1.05 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.lede{margin:10px 0 0;max-width:65ch;color:var(--muted)}
+
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar-in{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding-top:10px;padding-bottom:10px}
+.tally{font:500 15px/1.3 var(--body);font-variant-numeric:tabular-nums}
+.tally strong{font:800 22px/1 var(--display);color:var(--good);margin-right:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip b{font-weight:500;opacity:.65;margin-left:4px}
+.actions{display:flex;align-items:center;gap:12px;margin-left:auto}
+.save{font-size:13px;color:var(--muted);max-width:30ch;text-align:right}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--on-accent);border-radius:8px;padding:8px 14px;font-weight:600;cursor:pointer;white-space:nowrap}
+
+#copybox{margin:14px auto 0}
+#copybox .box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:10px}
+#copybox textarea{width:100%;min-height:150px;font:400 13px/1.45 var(--mono);background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px;resize:vertical}
+#copybox p{margin:0;color:var(--muted);font-size:13px}
+.ghost{align-self:flex-start;border:1px solid var(--line);background:transparent;border-radius:8px;padding:6px 12px;cursor:pointer}
+
+main{display:flex;flex-direction:column;gap:16px;padding-top:18px;padding-bottom:40px}
+.moment{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.moment.reviewed{border-left:4px solid var(--good);padding-left:15px}
+.moment.passed{border-left:4px solid var(--muted);padding-left:15px}
+.mhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.mid{font:800 22px/1 var(--display)}
+.tier{font:500 12px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:5px 8px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.tier-A{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.tier-B{border-color:var(--accent);color:var(--accent)}
+.meta{font:400 13px/1.3 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.flag{font-size:12px;line-height:1;padding:5px 8px;border-radius:4px;background:var(--warn-soft);color:var(--warn)}
+.sum{margin:0;max-width:65ch;font-size:15px}
+
+.versions{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.ver{display:flex;flex-direction:column;gap:8px;width:var(--h);padding:0;border-radius:10px}
+.ver.vt{width:max(calc(var(--h) * 9 / 16),150px)}
+.stage{background:var(--stage);border-radius:8px;overflow:hidden;display:flex;justify-content:center;outline:3px solid transparent;outline-offset:2px}
+.ver.on .stage{outline-color:var(--good)}
+video{display:block;height:var(--h);aspect-ratio:1/1;max-width:100%;background:var(--stage)}
+.vt video{aspect-ratio:9/16}
+.kind{display:flex;justify-content:space-between;gap:8px;font:500 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.ttl{margin:0;font-size:14px;line-height:1.35;min-height:2.7em;overflow-wrap:anywhere}
+.pick{border:1px solid var(--good);background:transparent;color:var(--good);border-radius:8px;padding:8px 10px;font-weight:600;cursor:pointer}
+.pick[aria-pressed="true"]{background:var(--good);color:var(--on-good)}
+
+.mfoot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-top:1px solid var(--line);padding-top:12px}
+.none{border:1px solid var(--line);background:transparent;border-radius:8px;padding:7px 12px;cursor:pointer;color:var(--muted);white-space:nowrap}
+.none[aria-pressed="true"]{background:var(--muted);border-color:var(--muted);color:var(--surface)}
+.note{flex:1 1 260px;min-width:0;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:7px 10px}
+.note::placeholder{color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.empty{color:var(--muted);padding:24px 0}
+footer{color:var(--muted);font-size:13px;padding-bottom:40px}
+footer p{margin:0;max-width:65ch}
+@media (max-width:520px){
+  h1{font-size:28px}
+  .actions{margin-left:0;width:100%;justify-content:space-between}
+  .save{text-align:left}
+  .moment{padding:14px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="count" id="count-line"></p>
+    <h1>Clip picks</h1>
+    <p class="lede">Watch each moment and pick the versions worth posting. Versions of one moment share the same cut and differ in shape, title, subtitles or speed, so one pick per moment is usually enough. In the descriptions, S1 is the main speaker on camera.</p>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap bar-in">
+    <div class="tally" aria-live="polite"><strong id="n-picked">0</strong> picked, <span id="n-rev">0</span> of <span id="n-all">0</span> moments reviewed</div>
+    <div class="chips" role="group" aria-label="Show moments" id="chips"></div>
+    <div class="actions">
+      <span class="save" id="save" role="status"></span>
+      <button class="btn" id="copy" type="button">Copy picks</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap" id="copybox" hidden>
+  <div class="box">
+    <p id="copymsg">Copying was blocked here. Select this text and copy it yourself.</p>
+    <textarea id="copytext" readonly aria-label="Your picks as text"></textarea>
+    <button class="ghost" id="copyclose" type="button">Close</button>
+  </div>
+</div>
+
+<main class="wrap" id="list"></main>
+
+<footer class="wrap">
+  <p>These are small preview copies for reviewing. The full-quality files have the same names in the clips folder on your D: drive.</p>
+</footer>
+
+<script>
+const DATA = /*DATA*/[];
+const KIND = {a:"Square", b:"Vertical", c:"Square + subtitles"};
+const TIER = {A:"Post first", B:"Decent", C:"Filler"};
+const LS_KEY = "clip-picks-__RUN__";
+const BUILD = "__BUILD__";   // changes on every build, so browsers do not show a cached older preview under the same file name
+let Q = "";
+
+const state = {};
+DATA.forEach(m => { state[m.id] = {good:[], none:false, note:"", at:0}; });
+
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function clean(v){
+  return {
+    good: Array.isArray(v && v.good) ? v.good.filter(x => typeof x === "string").slice(0, 8) : [],
+    none: !!(v && v.none),
+    note: typeof (v && v.note) === "string" ? v.note.slice(0, 500) : "",
+    at: Number(v && v.at) || 0
+  };
+}
+
+/* ---------- this device ---------- */
+function loadLocal(){
+  try{
+    const raw = JSON.parse(localStorage.getItem(LS_KEY) || "{}");
+    Object.keys(raw).forEach(id => { if(state[id]) state[id] = clean(raw[id]); });
+  }catch(e){}
+}
+function saveLocal(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(state)); }catch(e){} }
+
+/* ---------- build the page once ---------- */
+const list = document.getElementById("list");
+function build(){
+  const nClips = DATA.reduce((n, m) => n + m.versions.length, 0);
+  document.getElementById("count-line").textContent = nClips + " clips from " + DATA.length + " moments";
+  document.getElementById("n-all").textContent = DATA.length;
+  list.innerHTML = DATA.map(m => {
+    const vers = m.versions.map(v => {
+      const kind = v.kind || KIND[v.id.slice(-1)] || "";
+      const vert = v.vertical !== undefined ? v.vertical : v.id.slice(-1) === "b";
+      return '<article class="ver ' + (vert ? "vt" : "sq") + '" data-id="' + v.id + '">' +
+        '<div class="stage"><video controls playsinline preload="none" poster="p/' + v.id + '.jpg' + Q + '" src="v/' + v.id + '.mp4' + Q + '" aria-label="' + esc(v.id + ", " + kind) + '"></video></div>' +
+        '<div class="kind"><span>' + esc(kind) + '</span><span>' + v.id + '</span></div>' +
+        '<p class="ttl">' + esc(v.title) + '</p>' +
+        '<button class="pick" type="button" aria-pressed="false" data-pick="' + v.id + '">Pick</button>' +
+      '</article>';
+    }).join("");
+    const flags = m.flags.map(f => '<span class="flag">' + esc(f) + '</span>').join("");
+    return '<section class="moment" id="m-' + m.id + '" data-mid="' + m.id + '" data-tier="' + m.tier + '">' +
+      '<div class="mhead"><span class="mid">' + m.id + '</span>' +
+        '<span class="tier tier-' + m.tier + '">' + TIER[m.tier] + '</span>' +
+        '<span class="meta">' + esc(m.len + " s, score " + m.score + ", " + m.type + ", from " + m.source) + '</span>' + flags +
+      '</div>' +
+      '<p class="sum">' + esc(m.summary) + '</p>' +
+      '<div class="versions">' + vers + '</div>' +
+      '<div class="mfoot">' +
+        '<button class="none" type="button" aria-pressed="false" data-none="' + m.id + '">None of these</button>' +
+        '<label class="sr" for="note-' + m.id + '">Note about ' + m.id + '</label>' +
+        '<input class="note" id="note-' + m.id + '" type="text" maxlength="500" autocomplete="off" data-note="' + m.id + '" placeholder="Note for Claude, optional: what works or what to change">' +
+      '</div>' +
+    '</section>';
+  }).join("") + '<p class="empty" id="empty" hidden>No moments match this filter.</p>';
+}
+
+function syncMoment(id){
+  const sec = document.getElementById("m-" + id), st = state[id];
+  if(!sec) return;
+  sec.querySelectorAll(".ver").forEach(v => {
+    const on = st.good.includes(v.dataset.id);
+    v.classList.toggle("on", on);
+    const b = v.querySelector(".pick");
+    b.setAttribute("aria-pressed", on ? "true" : "false");
+    b.textContent = on ? "Picked" : "Pick";
+  });
+  sec.querySelector(".none").setAttribute("aria-pressed", st.none ? "true" : "false");
+  sec.classList.toggle("reviewed", st.good.length > 0);
+  sec.classList.toggle("passed", st.none && st.good.length === 0);
+  const inp = sec.querySelector(".note");
+  if(document.activeElement !== inp) inp.value = st.note;
+}
+
+/* ---------- filters and tally ---------- */
+const FILTERS = [
+  ["all", "All", m => true],
+  ["A", "Post first", m => m.tier === "A"],
+  ["B", "Decent", m => m.tier === "B"],
+  ["C", "Filler", m => m.tier === "C"],
+  ["todo", "To review", m => !state[m.id].good.length && !state[m.id].none],
+  ["picked", "Picked", m => state[m.id].good.length > 0]
+];
+let filter = "all";
+function drawChips(){
+  document.getElementById("chips").innerHTML = FILTERS.map(f =>
+    '<button class="chip" type="button" data-f="' + f[0] + '" aria-pressed="' + (filter === f[0]) + '">' + f[1] + '<b>' + DATA.filter(f[2]).length + '</b></button>').join("");
+}
+function applyFilter(){
+  const f = FILTERS.find(x => x[0] === filter)[2];
+  let shown = 0;
+  DATA.forEach(m => { const ok = f(m); document.getElementById("m-" + m.id).hidden = !ok; if(ok) shown++; });
+  document.getElementById("empty").hidden = shown > 0;
+}
+function tally(){
+  let p = 0, r = 0;
+  DATA.forEach(m => { const s = state[m.id]; p += s.good.length; if(s.good.length || s.none) r++; });
+  document.getElementById("n-picked").textContent = p;
+  document.getElementById("n-rev").textContent = r;
+  drawChips();
+}
+
+/* ---------- saved picks (outside this device) ---------- */
+let db = null, dbBroken = false;
+const busy = {}, again = {};
+let pending = 0;
+const saveEl = document.getElementById("save");
+function showSave(){
+  if(!db || dbBroken) saveEl.textContent = "Picks are kept on this device. Use Copy picks to send them to Claude.";
+  else if(pending > 0) saveEl.textContent = "Saving";
+  else saveEl.textContent = "Saved. Claude can read these picks.";
+}
+async function push(id, retried){
+  if(!db || dbBroken) return;
+  if(busy[id]){ again[id] = true; return; }
+  busy[id] = true; pending++; showSave();
+  try{
+    await db.doc("picks/" + id).set(JSON.parse(JSON.stringify(state[id])));
+  }catch(e){
+    if(e && e.code === "unavailable" && !retried){
+      busy[id] = false; pending--;
+      setTimeout(() => push(id, true), 600 + Math.random() * 900);
+      return;
+    }
+    dbBroken = true;
+  }
+  busy[id] = false; pending--;
+  if(again[id]){ again[id] = false; push(id); }
+  showSave();
+}
+function changed(id){
+  state[id].at = Date.now();
+  saveLocal(); syncMoment(id); tally(); push(id);
+}
+async function connect(){
+  const c = window.claude;
+  if(!c || typeof c.use !== "function"){ showSave(); return; }
+  saveEl.textContent = "Loading saved picks";
+  let d = null;
+  try{ d = await c.use("db"); }catch(e){}
+  if(!d){ showSave(); return; }
+  let answered = false;
+  const timer = setTimeout(() => { if(!answered) saveEl.textContent = "Saved picks can't be reached yet. Picks stay on this device meanwhile."; }, 10000);
+  try{
+    const snap = await d.collection("picks").get();
+    answered = true; clearTimeout(timer);
+    db = d;
+    const remote = {};
+    snap.docs.forEach(doc => { const v = doc.data(); if(v && state[doc.id]) remote[doc.id] = clean(v); });
+    Object.keys(state).forEach(id => {
+      const r = remote[id], l = state[id];
+      if(r && r.at > l.at){ state[id] = r; syncMoment(id); }
+      else if(l.at && (!r || r.at < l.at)) push(id);
+    });
+    saveLocal(); tally(); showSave();
+  }catch(e){
+    answered = true; clearTimeout(timer); showSave();
+  }
+}
+
+/* ---------- actions ---------- */
+const noteTimers = {};
+list.addEventListener("click", e => {
+  const p = e.target.closest("[data-pick]"), n = e.target.closest("[data-none]");
+  if(p){
+    const vid = p.dataset.pick, id = vid.slice(0, 3), s = state[id];
+    if(s.good.includes(vid)) s.good = s.good.filter(x => x !== vid);
+    else { s.good = s.good.concat(vid).sort(); s.none = false; }
+    changed(id);
+  }else if(n){
+    const id = n.dataset.none, s = state[id];
+    s.none = !s.none; if(s.none) s.good = [];
+    changed(id);
+  }
+});
+list.addEventListener("input", e => {
+  const id = e.target.dataset && e.target.dataset.note;
+  if(!id) return;
+  state[id].note = e.target.value.slice(0, 500);
+  clearTimeout(noteTimers[id]);
+  noteTimers[id] = setTimeout(() => changed(id), 800);
+});
+list.addEventListener("play", e => {
+  list.querySelectorAll("video").forEach(v => { if(v !== e.target && !v.paused) v.pause(); });
+}, true);
+document.getElementById("chips").addEventListener("click", e => {
+  const b = e.target.closest("[data-f]"); if(!b) return;
+  filter = b.dataset.f; drawChips(); applyFilter();
+});
+
+function picksText(){
+  const good = [], none = [], todo = [], notes = [];
+  DATA.forEach(m => {
+    const s = state[m.id];
+    if(s.good.length) good.push(...s.good); else if(s.none) none.push(m.id); else todo.push(m.id);
+    if(s.note.trim()) notes.push("- " + m.id + ": " + s.note.trim());
+  });
+  return ["Clip picks, __RUN__",
+    "Picked (" + good.length + "): " + (good.join(", ") || "none"),
+    "None of these: " + (none.join(", ") || "none"),
+    "Not reviewed: " + (todo.join(", ") || "none"),
+    notes.length ? "Notes:\n" + notes.join("\n") : "Notes: none"].join("\n");
+}
+const copyBtn = document.getElementById("copy"), copyBox = document.getElementById("copybox");
+copyBtn.addEventListener("click", () => {
+  const text = picksText();
+  const fallback = () => {
+    document.getElementById("copytext").value = text;
+    copyBox.hidden = false;
+    const t = document.getElementById("copytext"); t.focus(); t.select();
+  };
+  try{
+    navigator.clipboard.writeText(text).then(() => {
+      copyBtn.textContent = "Copied"; setTimeout(() => { copyBtn.textContent = "Copy picks"; }, 1600);
+    }, fallback);
+  }catch(e){ fallback(); }
+});
+document.getElementById("copyclose").addEventListener("click", () => { copyBox.hidden = true; });
+
+/* ---------- start ---------- */
+function start(){
+  loadLocal();
+  build();
+  DATA.forEach(m => syncMoment(m.id));
+  tally(); applyFilter(); showSave();
+  connect();
+}
+(function(){
+  // Ask for one poster with the build id attached. If the host serves it, use the id on every preview;
+  // if not (or no answer in 2.5 s), fall back to the plain file names.
+  const first = DATA[0] && DATA[0].versions[0];
+  if(!first || !BUILD || BUILD.indexOf("__") === 0){ start(); return; }
+  let done = false;
+  const go = q => { if(done) return; done = true; Q = q; start(); };
+  const probe = new Image();
+  probe.onload = () => go("?r=" + BUILD);
+  probe.onerror = () => go("");
+  setTimeout(() => go(""), 2500);
+  probe.src = "p/" + first.id + ".jpg?r=" + BUILD;
+})();
+</script>
+</body>
+</html>

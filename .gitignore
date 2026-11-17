@@ -1,0 +1,17 @@
+# machine-specific settings and secrets: never commit
+config.json
+.env
+*.env
+
+# Python and editor leftovers
+__pycache__/
+*.pyc
+*.part
+.vscode/
+.idea/
+
+# media and work data do not belong here
+*.mp4
+*.mov
+*.mp3
+*.wav

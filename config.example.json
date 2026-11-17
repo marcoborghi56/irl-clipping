@@ -1,0 +1,13 @@
+{
+ "_about": "Copy this file to config.json and fill it in. config.json is ignored by git. scripts/common.py reads it.",
+ "data_root": "D:/clipping",
+ "env_path": "C:/path/to/.env",
+ "study_root": "D:/clipping/_study",
+ "playbook_page": {"slug": null, "url": null},
+ "_notes": {
+  "data_root": "Folder for work files and rendered clips, one subfolder per run. Use a drive with plenty of free space.",
+  "env_path": "A .env file containing ELEVENLABS_API_KEY=... The key is loaded at run time and must never be printed or committed.",
+  "study_root": "Only needed for scripts/study: where downloaded reels and their analysis live.",
+  "playbook_page": "Filled in by Claude after it publishes the playbook page."
+ }
+}

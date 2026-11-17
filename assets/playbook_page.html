@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IRL clipping playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Built by scripts/build_playbook_page.py from assets/playbook_page.html.
+   Tokens match scripts/review/template.html so both pages read as one system. */
+:root{
+  --bg:#eef0f4; --surface:#ffffff; --ink:#151821; --muted:#5a6172; --line:#d5d9e2;
+  --accent:#2545c9; --on-accent:#ffffff;
+  --good:#117a45; --on-good:#ffffff; --good-soft:#e0f3e8;
+  --warn:#8a5200; --warn-soft:#f8ecd0;
+  --stage:#0b0d12;
+  --display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1015; --surface:#171a22; --ink:#eceef4; --muted:#9ba2b4; --line:#2b303d;
+    --accent:#8ea2ff; --on-accent:#0c1020;
+    --good:#49c586; --on-good:#06180e; --good-soft:#12301f;
+    --warn:#e3b253; --warn-soft:#33270b;
+    --stage:#000000;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1015; --surface:#171a22; --ink:#eceef4; --muted:#9ba2b4; --line:#2b303d;
+  --accent:#8ea2ff; --on-accent:#0c1020;
+  --good:#49c586; --on-good:#06180e; --good-soft:#12301f;
+  --warn:#e3b253; --warn-soft:#33270b;
+  --stage:#000000;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+a{color:var(--accent);text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.skip{position:absolute;left:20px;top:-60px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 12px;z-index:10}
+.skip:focus{top:10px}
+
+/* header */
+.top{padding:28px 0 18px}
+.count{margin:0 0 6px;font:500 13px/1.4 var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+h1{margin:0;font:800 34px/1.05 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.lede{margin:10px 0 0;max-width:65ch;color:var(--muted)}
+.lede a{font-weight:500}
+
+/* sticky view bar */
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar-in{padding-top:10px;padding-bottom:10px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.chip{display:inline-block;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;font-size:13px;line-height:1.3;text-decoration:none;white-space:nowrap}
+.chip:hover{border-color:var(--muted)}
+.chip[aria-current="page"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* views */
+main{padding-top:22px;padding-bottom:48px}
+.view{scroll-margin-top:60px}
+.view[hidden]{display:none}
+.vhead{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 16px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+.vhead h2{margin:0;font:800 26px/1.15 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.src{font:400 12px/1.3 var(--mono);color:var(--muted)}
+
+/* compact section list (Playbook view) */
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:16px 0 8px}
+.toc p{margin:0 0 6px;font:500 12px/1.3 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.toc ol{margin:0;padding:0;list-style:none;columns:2 260px;column-gap:24px}
+.toc li{break-inside:avoid;padding:2px 0;font-size:14px;line-height:1.4}
+.toc a{text-decoration:none;color:var(--ink)}
+.toc a:hover{color:var(--accent);text-decoration:underline}
+
+/* rendered documents */
+.doc{max-width:100%}
+.doc h2,.doc h3,.doc h4,.doc h5,.doc h6{text-wrap:balance;scroll-margin-top:72px;max-width:65ch}
+.doc h2{margin:30px 0 8px;font:700 22px/1.2 var(--display)}
+.doc h3{margin:28px 0 8px;font:700 19px/1.25 var(--display)}
+.doc h4{margin:22px 0 6px;font:700 16px/1.3 var(--display)}
+.doc h5,.doc h6{margin:18px 0 6px;font:600 15px/1.3 var(--body)}
+.doc > h2:first-child,.doc > h3:first-child{margin-top:20px}
+.doc p,.doc li,.doc blockquote{max-width:65ch}
+.doc p{margin:10px 0}
+.doc ul,.doc ol{padding-left:1.4em;margin:10px 0}
+.doc li{margin:4px 0}
+.doc li > ul,.doc li > ol{margin:4px 0}
+.doc strong{font-weight:600}
+.doc blockquote{margin:12px 0;padding:2px 0 2px 14px;border-left:3px solid var(--line);color:var(--muted)}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.doc code{font:400 .88em/1.4 var(--mono);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:0 4px;overflow-wrap:anywhere}
+.doc pre{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;overflow-x:auto;margin:12px 0}
+.doc pre code{background:none;border:0;padding:0;font-size:13px;line-height:1.5;overflow-wrap:normal;white-space:pre}
+.empty{color:var(--muted);margin:16px 0}
+
+/* tables */
+.tw{overflow-x:auto;margin:12px 0;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table{border-collapse:collapse;font-size:13.5px;line-height:1.4;font-variant-numeric:tabular-nums;min-width:100%}
+th,td{padding:7px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font:500 12px/1.3 var(--mono);color:var(--muted);background:var(--bg);white-space:nowrap}
+.doc td code{white-space:nowrap}
+table.kv th:first-child,table.kv td:first-child{width:34%}
+table.kv td:first-child{font:400 13px/1.4 var(--mono);color:var(--ink);overflow-wrap:anywhere}
+table.kv td.v{font-family:var(--mono);font-size:13px;overflow-wrap:anywhere}
+table.kv td.t{font-family:var(--body);font-size:14px}
+
+footer{color:var(--muted);font-size:13px;padding-bottom:40px}
+footer p{margin:0;max-width:65ch}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  h1{font-size:28px}
+  .vhead h2{font-size:22px}
+  .toc{padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#views">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <p class="count"><!--SLOT:facts--></p>
+    <h1>IRL clipping playbook</h1>
+    <p class="lede">This page collects the rules for cutting short clips out of raw IRL vlog footage, learned from 88 Instagram reels and refined by the creator's clip picks. <a href="https://claude.ai/artifact/1ksvi4Y3z1Yy9jD6YXPcCD">Review the current clips</a></p>
+  </div>
+</header>
+
+<nav class="bar" aria-label="Playbook views">
+  <div class="wrap bar-in">
+    <ul class="chips"><!--SLOT:nav--></ul>
+  </div>
+</nav>
+
+<main class="wrap" id="views">
+<!--SLOT:views-->
+</main>
+
+<footer class="wrap">
+  <p><!--SLOT:footer--></p>
+</footer>
+
+<script>
+(function(){
+  var views = Array.prototype.slice.call(document.querySelectorAll(".view"));
+  var links = Array.prototype.slice.call(document.querySelectorAll(".chip"));
+  var DEFAULT = "playbook";
+  function show(){
+    var name = decodeURIComponent(location.hash.replace(/^#/, ""));
+    var view = null, target = null;
+    if(/^[A-Za-z0-9-]+$/.test(name)){
+      var el = document.getElementById(name);
+      if(el){
+        view = el.classList.contains("view") ? el : el.closest(".view");
+        if(view && view !== el) target = el;
+      }
+    }
+    if(!view) view = document.getElementById(DEFAULT);
+    views.forEach(function(v){ v.hidden = (v !== view); });
+    links.forEach(function(a){
+      if(a.getAttribute("href") === "#" + view.id) a.setAttribute("aria-current", "page");
+      else a.removeAttribute("aria-current");
+    });
+    if(target) target.scrollIntoView();
+    else if(name && view.id === name) window.scrollTo(0, Math.min(window.scrollY, document.getElementById("views").offsetTop - 60));
+  }
+  window.addEventListener("hashchange", show);
+  show();
+})();
+</script>
+</body>
+</html>

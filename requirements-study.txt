@@ -1,0 +1,10 @@
+# Only for scripts/study (repeating the reel study on new creators).
+-r requirements.txt
+faster-whisper
+scenedetect
+rapidocr-onnxruntime
+onnxruntime
+matplotlib
+# For faster-whisper on an NVIDIA GPU:
+# nvidia-cublas-cu12
+# nvidia-cudnn-cu12
